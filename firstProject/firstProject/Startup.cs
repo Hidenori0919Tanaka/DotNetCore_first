@@ -36,8 +36,10 @@ namespace firstProject
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            //services.AddDbContext<MvcMovieContext>(options =>
+            //        options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
             services.AddDbContext<MvcMovieContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
+                                                   options.UseSqlServer(@"server=localhost;database=aspDotNetCoreHoge;uid=sa;pwd=Hoge1100;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
